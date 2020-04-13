@@ -13,4 +13,13 @@ class UsersController < ApplicationController
     @saved = Post.joins(:bookmarks).where("bookmarks.user_id=?", current_user.id).
       includes(:photos, :likes, :comments) if @user == current_user
   end
+  
+  # def send_email
+  #   @sender = User.find(params[:id])
+  #   @receiver = User.find(@sender.receiver_id)
+  
+  #   Mailer.order_send(@sender, @receiver).deliver
+  #   flash[:notice] = "Email has been sent."
+  #   redirect_to user_path(@user.id)
+  # end
 end

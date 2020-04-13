@@ -22,7 +22,7 @@ body {
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
-  height: 77px;
+  height: 54px;
 }
 
 .core-sprite {
@@ -180,6 +180,13 @@ footer .nav-item {
 .profile-wrapper {
   padding: 60px 0;
   border-bottom: 1px solid #efefef;
+  -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin: 0 auto 30px;
+    max-width: 935px;
+    width: 100%;
 
   .username {
     font-size: 32px;

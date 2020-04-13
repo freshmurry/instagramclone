@@ -9,7 +9,8 @@
           <%= post.comments.size %>
         </span>
       </div>
-      <%= image_tag post.photos.first.image.url(:standard), class: "card-img-top image-preview" %>
+      <!--<= image_tag post.photos.first.image.url(:standard), class: "card-img-top image-preview" %>-->
+      <%= link_to "Profile", user_path(current_user), class: "card-img-top image-preview" %>
     <% end %>
   </div>
 <% end %>
