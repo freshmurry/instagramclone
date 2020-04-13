@@ -33,7 +33,10 @@ class PostsController < ApplicationController
     @is_bookmarked = @post.is_bookmarked(current_user)
     set_meta_tags title: "Photo by "+@post.user.name
   end
-
+  
+  def update
+  end
+  
   def destroy
     if @post.user == current_user
       if @post.destroy
@@ -58,6 +61,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit :content
+    params.require(:post).permit(:content, :photos, :comments, :likes, :bookmarks)
   end
 end

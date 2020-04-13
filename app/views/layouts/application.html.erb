@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    
+    <%= yield(:after_js) %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= cloudinary_js_config %>
+    
     <%= render 'shared/navbar' if current_user %>
     <div class="container">
       <%= yield %>
