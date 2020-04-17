@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require jquery3
 //= require popper
-//= require cloudinary/jquery.cloudinary
 //= require bootstrap-sprockets
 //= require dropzone
 //= require_tree .

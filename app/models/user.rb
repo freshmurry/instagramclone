@@ -11,7 +11,15 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[twitter]
 
   validates :name, presence: true, length: {maximum: 50}
-
+  
+  # def total_followers
+  #   "#{first_name} #{last_name}"
+  # end
+  
+  # def total_following
+  #   Folower.where(following_id: self.id).count
+  # end
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

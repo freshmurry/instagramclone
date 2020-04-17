@@ -14,10 +14,6 @@
 
   <body>
     
-    <%= yield(:after_js) %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= cloudinary_js_config %>
-    
     <%= render 'shared/navbar' if current_user %>
     <div class="container">
       <%= yield %>
@@ -34,12 +30,12 @@
     <% end %>
   </body>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65590279-6"></script>
+  <script async src=""></script>
   <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-65590279-6');
+      gtag('config', '');
   </script>
 </html>

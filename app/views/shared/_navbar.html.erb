@@ -20,8 +20,9 @@
           <a class="nav-link core-sprite notification-icon hide-text" href="#">Notification</a>
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
-          <!--<= image_tag avatar_url(current_user), class: "nav-link core-sprite profile-icon hide-text" %>-->
+          <%= link_to user_path(current_user) do %>
+            <%= image_tag avatar_url(current_user), class: "nav-link post-author-icon hide-text" %>
+          <% end %>
         </li>
       </ul>
     </div>

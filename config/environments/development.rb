@@ -9,16 +9,16 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  # Show full error reports.
+  # Show full error reports and disable caching.
   config.consider_all_requests_local = true
-
-  # Enable/disable caching. By default caching is disabled.
+  
+   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
+      'Cache-Control' => 'public, max-age=172800'
     }
   else
     config.action_controller.perform_caching = false
@@ -27,12 +27,15 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
-  config.action_mailer.perform_caching = false
-
+  config.action_mailer.raise_delivery_errors = true
+  
+  config.action_controller.perform_caching = false
+  
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+  
+  # Send emails using letteropener in dev mode to open emails in a browser
+  config.action_mailer.delivery_method = :letter_opener
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
@@ -42,15 +45,28 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+  # yet still be able to expire them through the digest params.
+  config.assets.digest = true
 
+  # Adds additional error checking when serving assets at runtime.
+  # Checks for improperly declared sprockets dependencies.
+  # Raises helpful error messages.
+  config.assets.raise_runtime_errors = true
+
+  config.assets.quiet = true
+  
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
-  # Use an evented file watcher to asynchronously detect changes in source code,
-  # routes, locales, etc. This feature depends on the listen gem.
+  
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_cable.url = "ws://fa50b18f1ae44ac3a6e9772688a30384.vfs.cloud9.us-east-1.amazonaws.com//cable"
+  
+  config.web_console.whitelisted_ips << "10.240.0.0/16"
+  
+  #Required for Heroku
+  config.action_mailer.default_url_options = { host: 'https://583b736864374861bceb93ae6845b384.vfs.cloud9.us-east-1.amazonaws.com/'}
+
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

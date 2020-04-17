@@ -6,12 +6,15 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', '~> 4.0.0'
-gem 'carrierwave', '~> 1.0'
-gem 'cloudinary'
+
+# image resizing
+gem 'mini_magick'
+
+gem 'paperclip', '~> 4.2.0'
+gem 'aws-sdk', '~> 3'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'dropzonejs-rails'
-gem 'figaro'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'meta-tags'
@@ -31,7 +34,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
   gem 'pry-rails'
 end
 
@@ -42,6 +45,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
+  # local ENV variables
+  gem 'figaro'
 end
 
 group :production do
