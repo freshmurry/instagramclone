@@ -13,6 +13,13 @@
             <div class="col pl-0">
               <%= f.text_field :content, class: "form-control border-0", placeholder: "Say something about this ..." %>
             </div>
+            <% @post.content.to_s.split(' ').each do |word| %>
+              <% if word.start_with?('#') %>
+                <%= link_to word, search_path(query: word) %>
+              <%else %>
+                <%= word %>
+              <%end %>
+            <% end %>
           </div>
           <div class="fallback">
             <%= file_field_tag "images[]", type: :file, multiple: true %>
