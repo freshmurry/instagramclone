@@ -2,6 +2,9 @@
   <div class="panel-body">
     <div class="mb-2">
       <% if comment.user == current_user %>
+        <%= link_to edit_post_path(post), method: :edit, class: "ml-auto mx-0 my-auto" do %>
+            <i class="far fa-edit-alt" aria-hidden="true"></i>
+          <% end %>
         <%= link_to "Delete comment", comment_path(comment),
           method: :delete, remote: true, class: "core-sprite delete-comment hide-text" %>
       <% end %>
