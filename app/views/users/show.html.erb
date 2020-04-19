@@ -10,13 +10,7 @@
         <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
         <button type="button" class="core-sprite setting" data-toggle="modal" data-target="#exampleModal"></button>
       <% end %>
-      
-      <ul class="posts">
-        <li><span><%= @posts.count %></span> Posts</li>
-        <li><span>19m</span> Followers</li>
-        <li><span>345</span> Following</li>
-      </ul>
-
+    
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -39,6 +33,14 @@
     </div>
     
     <div class="row">
+      <ul class="posts">
+        <li><span><%= @posts.count %></span> Posts</li>
+        <li><span>19m</span> Followers</li>
+        <li><span>345</span> Following</li>
+      </ul>
+    </div>
+    
+    <div class="row">
       <%= @user.bio %>
     </div>
     <div class="row">
@@ -50,9 +52,10 @@
       <nav>
         <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab" aria-controls="nav-posts" aria-selected="true"><i class="fa fa-th"></i> POSTS</a>
-          <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-tv"></i>IGTV</a>
+          <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-tv"></i> IGTV</a>
           <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> SAVED</a>
           <a class="nav-item nav-link" id="nav-saved-tab" data-toggle="tab" href="#nav-saved" role="tab" aria-controls="nav-saved" aria-selected="false"><i class="fa fa-bookmark"></i> TAGGED</a>
+        </div>
       </nav>
       <% end %>
       <div class="tab-content pb-3" id="nav-tabContent">

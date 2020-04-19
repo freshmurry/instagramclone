@@ -11,8 +11,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[twitter]
 
   validates :name, presence: true, length: {maximum: 50}
-  validates :username, presence: true, length: {maximum: 50}
-  
+
   # def total_followers
   #   "#{username}"
   # end
@@ -41,5 +40,13 @@ class User < ApplicationRecord
     else
       nil
     end
+  end
+
+  
+  def edit
+  end
+  
+  def user_params
+    params.require(:user).permit(:username, :name, :website, :bio, :email, :avatar)
   end
 end
