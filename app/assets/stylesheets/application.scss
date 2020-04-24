@@ -2,6 +2,21 @@
 @import "toastr";
 @import "dropzone/dropzone";
 
+@font-face {
+  font-family: 'Billabong';
+  src: font-url('Billabong.ttf') format('truetype');
+}
+
+// BILLABONG FREE DOWNLOAN FROM allbestfonts.com
+
+h1 {
+  font-family: Billabong;
+  color: black;
+  font-size: 4em;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
 body {
   background-color: #fafafa;
   font-size: 14px;
@@ -9,6 +24,7 @@ body {
 }
 
 .navbar {
+  font-family: Billabong;
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
   height: 54px;
@@ -26,9 +42,10 @@ body {
 }
 
 .navbar-brand {
-  background-position: -176px 0;
-  height: 35px;
-  width: 176px;
+  max-height: 100%;
+  max-width: 100%;
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
 .hide-text {

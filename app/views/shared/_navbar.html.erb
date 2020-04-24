@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-    <%= link_to "Icon", root_path, class: "navbar-brand core-sprite hide-text" %>
+    <%= link_to "Instafake", root_path, class: "navbar-brand" %>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,12 +14,12 @@
         <div id="users-result"></div>
       <% end %>
       <ul class="navbar-nav ml-md-auto">
-        <li class="nav-item">
-          <a class="nav-link core-sprite explore-icon hide-text" href="#">Explore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link core-sprite notification-icon hide-text" href="#">Notification</a>
-        </li>
+        <!--<li class="nav-item">-->
+        <!--  <a class="nav-link core-sprite explore-icon hide-text" href="#">Explore</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+        <!--  <a class="nav-link core-sprite notification-icon hide-text" href="#">Notification</a>-->
+        <!--</li>-->
         <li class="nav-item">
           <%= link_to user_path(current_user) do %>
             <%= image_tag current_user.avatar, class: "nav-link post-author-icon hide-text" %>
