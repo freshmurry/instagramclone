@@ -1,6 +1,12 @@
 # How to build Instagram using Ruby on Rails
 
-This is source code for my course: [How to build Instagram using Ruby on Rails](https://www.udemy.com/course/1648774/) 
+First, let me start by saying that I pieced this app together using a few different git repos and online tutorials.
+
+The majority of the code seen here was forked from: https://github.com/truongnmt/instagram-clone. However, I was able to integrate a few additions such as:
+
+<li>Added view for "Post, Followwers, and Following" on user's profile page</li> 
+
+This is source code for the course: [How to build Instagram using Ruby on Rails](https://www.udemy.com/course/1648774/) 
 
 ## Demo
 Here is a working live demo: https://longram.herokuapp.com/

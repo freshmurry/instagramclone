@@ -12,22 +12,21 @@
 
       <div class="row username-img">
         <div class="col-sm-3 text-right">
-          <%= image_tag avatar_url(@user), width: '72', height: '72', class: "round-img" %>
+          <%= image_tag current_user.avatar, width: '72', height: '72', class: "round-img" %>
         </div>
         
         <div class="col-sm-9">
           <p><%= @user.username %></p>
-          <%= form_tag [@user], html: { multipart: true } do |form| %>
-            <div class="form-group">
-              <span class="btn btn-default btn-file">
-                <i class="fa fa-cloud-upload-alt" aria-hidden="true"></i> Select A Profile Photo
-                <%= f.file_field :avatar,  type: :file, multiple: true %>
-              </span></br>                
-            </div>
-          <% end %>
         </div>
       </div>
-
+      
+      <div class="form-group row">
+        <%= f.label :Profile_Photo, class: 'col-sm-3 col-form-label text-right font-weight-bold' %>
+        <div class="col-sm-9">
+          <%= f.file_field :avatar, type: :file, class: 'form-control col-sm-9' %>
+        </div>
+      </div>
+        
       <div class="form-group row">
         <%= f.label :name, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
         <div class="col-sm-9">

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.search(params[:term])
+    @posts = @user.posts.order(created_at: :desc)
+
     respond_to :js
   end
 
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
   end
   
   # def send_email
@@ -31,6 +33,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:username, :name, :website, :bio, :email, :avatar)
+    params.require(:user).permit(:username, :name, :website, :bio, :email)
   end
 end

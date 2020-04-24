@@ -11,7 +11,12 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[twitter]
 
   validates :name, presence: true, length: {maximum: 50}
-
+  has_attached_file :avatar
+  validates_attachment :avatar,
+    :presence => true,
+    :size => { :in => 0..10.megabytes },
+    :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
+    
   # def total_followers
   #   "#{username}"
   # end

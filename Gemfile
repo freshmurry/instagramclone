@@ -10,7 +10,7 @@ gem 'bootstrap', '~> 4.0.0'
 # image resizing
 gem 'mini_magick'
 
-gem 'paperclip', '~> 4.2.0'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 3'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
