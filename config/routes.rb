@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'posts#index'
+  
+  get 'search' => 'search#index'
+
 
   devise_for :users,
     path: '',

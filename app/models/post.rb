@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :likes, -> {order(:created_at => :desc)}
   has_many :comments, -> {order(:created_at => :desc)}
   has_many :bookmarks
+  
   has_many :post_hash_tags
   has_many :hash_tags, through: :post_hash_tags
 

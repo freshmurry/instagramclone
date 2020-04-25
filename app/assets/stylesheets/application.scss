@@ -38,7 +38,7 @@ body {
 }
 
 .core-sprite {
-  background-image: image-url("core-sprite-2x.png");
+  background-image: image-url("core-sprite-2x.jpeg");
   background-size: 405px 379px;
   background-repeat: no-repeat;
 }
@@ -96,7 +96,7 @@ body {
 // Landing
 .landing-left {
   .dummy-phone {
-    background-image: image-url("dummy-phone-2x.png");
+    background-image: image-url("dummy-phone-2x.jpeg");
     background-repeat: no-repeat;
     background-position: right 0;
     background-size: 454px 618px;
@@ -529,6 +529,20 @@ ul.posts{
 
 .search-result-item:hover {
   background-color: #fafafa;
+}
+
+.search-form{
+  input{
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+.search-page{
+  h1{
+    font-size: 24px;
+    padding: 25px 0 0 30px;
+  }
 }
 
 .popover {
