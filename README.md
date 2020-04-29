@@ -59,3 +59,4 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 ## [License](LICENSE.md)
 
 MIT © [Truong Nguyen](https://github.com/truongnmt)
+MIT © [Lawrence Murry](https://github.com/freshmurry)
