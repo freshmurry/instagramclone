@@ -8,23 +8,16 @@
     </div>
     <div class="col-lg-4 col-md-5 mt-sm-4 mt-md-0">
       <div class="row px-3 d-flex align-items-center">
-        <% if @post.is_belongs_to? current_user %>
-          <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
-          <%= image_tag post.user.avatar, class: "post-author-icon" %>
+        <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
+          <%= image_tag @post.user.avatar, class: "post-author-icon" %>
         <% end %>
-        
         <%= link_to user_path(@post.user), class: "normal-color no-text-decoration d-flex align-self-center",
           title: @post.user.name do %>
-          <strong><%= @post.user.name %></strong>
+          <strong><%= @post.user.username %></strong>
         <% end %>
-        
         <% if @post.is_belongs_to? current_user %>
-          <%= link_to edit_post_path(@post), method: :edit do %>
-          <i class="far fa-edit-alt" aria-hidden="true"></i>
-        <% end %>
-        
-        <%= link_to post_path(@post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
-          <i class="far fa-trash" aria-hidden="true"></i>
+          <%= link_to post_path(@post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
+            <i class="far fa-trash-alt" aria-hidden="true"></i>
           <% end %>
         <% end %>
       </div>
@@ -32,7 +25,7 @@
       <div class="comment-list py-2">
       <% if @post.content.present? %>
         <div>
-          <span><strong><%= @post.user.name %></strong></span>
+          <span><strong><%= @post.user.username %></strong></span>
           <span><%= @post.content %></span>
         </div>
       <% end %>
@@ -63,4 +56,3 @@
     </div>
   </div>
 </div>
-<% end %>

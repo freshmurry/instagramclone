@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  default_scope { order(created_at: :desc) }
   belongs_to :user
   has_many :photos, dependent: :destroy
   has_many :likes, -> {order(:created_at => :desc)}
@@ -9,7 +10,7 @@ class Post < ApplicationRecord
   has_many :hash_tags, through: :post_hash_tags
 
   after_commit :create_hash_tags, on: :create
-    
+
   def is_belongs_to? user
     Post.find_by(user_id: user.id, id: id)
   end

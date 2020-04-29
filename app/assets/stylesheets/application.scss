@@ -9,10 +9,8 @@
   font-style: normal;
 }
 
-// BILLABONG FREE DOWNLOAN FROM allbestfonts.com
-
-h1 {
-  font-family: Billabong;
+h1.billabong {
+  font-family: 'Billabong';
   color: black;
   font-size: 4em;
   margin: 0 0 10px;
@@ -36,10 +34,10 @@ body {
 }
 
 .navbar {
-  font-family: Billabong;
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
   height: 54px;
+  flex-wrap: nowrap;
 }
 
 .navbar-toggler {
@@ -53,11 +51,22 @@ body {
   background-repeat: no-repeat;
 }
 
+// BILLABONG FREE DOWNLOAN FROM allbestfonts.com
+
 .navbar-brand {
+  font-family: Billabong;
   max-height: 100%;
   max-width: 100%;
   font-size: 2.5em;
   font-weight: bold;
+  // padding: auto;
+}
+
+.follower-suggestions {
+  background: #FFF;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 
 .hide-text {

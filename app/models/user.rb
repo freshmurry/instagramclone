@@ -8,18 +8,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: %i[twitter]
+         :omniauthable, omniauth_providers: %i[facebook]
 
   validates :name, presence: true, length: {maximum: 50}
-  has_attached_file :avatar
-    
-  # def total_followers
-  #   "#{username}"
-  # end
   
-  # def total_following
-  #   Folower.where(following_id: self.id).count
-  # end
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "blank.jpg"
+  
+  def total_followers
+    "#{username}"
+  end
+  
+  def total_following
+    Folower.where(following_id: self.id).count
+  end
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -29,6 +30,7 @@ class User < ApplicationRecord
       user.image = auth.info.image.gsub!("_normal", "") # assuming the user model has an image
       user.uid = auth.uid
       user.provider = auth.provider
+      user.username = auth.info.name.gsub(" ", "")
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
@@ -41,13 +43,5 @@ class User < ApplicationRecord
     else
       nil
     end
-  end
-
-  
-  def edit
-  end
-  
-  def user_params
-    params.require(:user).permit(:username, :name, :website, :bio, :email, :avatar)
   end
 end

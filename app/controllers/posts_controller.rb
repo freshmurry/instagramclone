@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     set_meta_tags title: "Photo by "+@post.user.name
   end
   
-  def update
+  def edit
   end
   
   def destroy

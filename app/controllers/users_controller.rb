@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.search(params[:term])
-    @posts = @user.posts.order(created_at: :desc)
-
     respond_to :js
   end
 
@@ -16,23 +14,10 @@ class UsersController < ApplicationController
     @saved = Post.joins(:bookmarks).where("bookmarks.user_id=?", current_user.id).
       includes(:photos, :likes, :comments) if @user == current_user
   end
+
+  # private
   
-  def edit
-    # @user = User.find(params[:id])
-  end
-  
-  # def send_email
-  #   @sender = User.find(params[:id])
-  #   @receiver = User.find(@sender.receiver_id)
-  
-  #   Mailer.order_send(@sender, @receiver).deliver
-  #   flash[:notice] = "Email has been sent."
-  #   redirect_to user_path(@user.id)
+  # def user_params
+  #   params.require(:user).permit(:username, :name, :website, :bio, :email)
   # end
-  
-  private
-  
-  def user_params
-    params.require(:user).permit(:username, :name, :website, :bio, :email)
-  end
 end

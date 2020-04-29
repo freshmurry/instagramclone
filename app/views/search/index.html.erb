@@ -2,13 +2,15 @@
   <% if @posts.exists? %>
     <h1>Top Posts</h1>
   <% else %>
-    <h1>Oop! No matching posts ...</h1>
+    <h1>Oops! No matching posts ...</h1>
   <% end %>
-<div class="user-images">
+
+  <div class="user-images">
     <% @posts.each do |post|%>
       <div class="wrapper">
-        <%=image_tag post.image %>
-        <!--<=image_tag post.image.url(:standard) %>-->
+        <%=link_to post_path(post) do %>
+          <%=image_tag post.image %>
+        <% end %>
       </div>
     <% end %>
   </div>

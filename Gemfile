@@ -19,7 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'meta-tags'
 gem 'omniauth', '~> 1.6'
-gem 'omniauth-twitter'
+# gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
@@ -27,6 +28,7 @@ gem 'toastr-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate-bootstrap4'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
