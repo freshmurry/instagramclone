@@ -11,8 +11,15 @@ Rails.application.routes.draw do
 
   # get '/users/:id', to: 'users#show'
   # /users/3 -> Users controller, show action, params {id: '3'}
-  resources :users, only: [:index, :show]
+
+  resources :users, only:[:index, :show]
+
+  # post 'follow' => 'follows#create'
+  # delete 'unfollow' => 'follows#destroy'
   
+  post 'follows' => 'follows#create'
+  delete 'unfollow' => 'follows#destroy'
+
   get "about" => "pages#about" #creates about_path
   get "support" => "pages#support"
   get "blog" => "pages#blog"
@@ -21,7 +28,6 @@ Rails.application.routes.draw do
   get "privacy" => "pages#privacy"
   get "terms" => "pages#terms"
   get "faq" => "pages#faq"
-
 
   resources :posts, only: [:index, :show, :create, :edit, :destroy] do
     resources :photos, only: [:create]

@@ -14,10 +14,4 @@ class UsersController < ApplicationController
     @saved = Post.joins(:bookmarks).where("bookmarks.user_id=?", current_user.id).
       includes(:photos, :likes, :comments) if @user == current_user
   end
-
-  # private
-  
-  # def user_params
-  #   params.require(:user).permit(:username, :name, :website, :bio, :email)
-  # end
 end

@@ -6,12 +6,20 @@
           method: :delete, remote: true, class: "core-sprite delete-comment hide-text" %>
       <% end %>
       <span>
-        <strong>
-          <%= link_to comment.user.username, user_path(comment.user),
-            class: "no-text-decoration normal-color" %>
-        </strong>
+        <div class="row">
+          <div class="col-md-9">
+            <%= link_to user_path(current_user) do %>
+              <%= image_tag current_user.avatar, class: "post-author-icon" %>
+            <% end %>
+          
+            <strong>
+              <%= link_to comment.user.username, user_path(comment.user),
+                class: "no-text-decoration normal-color" %>
+            </strong>
+            <span><%= comment.content %></span>
+          </div>  
+        </div>  
       </span>
-      <span><%= comment.content %></span>
     </div>
   </div>
 <% end %>

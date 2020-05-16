@@ -13,14 +13,17 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 50}
   
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "blank.jpg"
+
+  # def total_followers
+  #   "#{username}"
+  # end
   
-  def total_followers
-    "#{username}"
-  end
+  # def total_following
+  #   Folower.where(following_id: self.id).count
+  # end
   
-  def total_following
-    Folower.where(following_id: self.id).count
-  end
+  acts_as_followable
+  acts_as_follower
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
