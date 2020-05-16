@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :destroy]
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 2000).includes(:photos, :user, :likes).
-      order("created_at DESC")
+    @posts = Post.paginate(:page => params[:page], :per_page => 15).includes(:photos, :user, :likes).
+      order("created_at desc")
     @post = Post.new
   end
 
@@ -33,10 +33,7 @@ class PostsController < ApplicationController
     @is_bookmarked = @post.is_bookmarked(current_user)
     set_meta_tags title: "Photo by "+@post.user.name
   end
-  
-  def edit
-  end
-  
+
   def destroy
     if @post.user == current_user
       if @post.destroy
@@ -61,6 +58,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :photos, :image, :comments, :likes, :bookmarks)
+    params.require(:post).permit :content
   end
 end
