@@ -14,14 +14,6 @@ class User < ApplicationRecord
   
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "blank.jpg"
 
-  # def total_followers
-  #   "#{username}"
-  # end
-  
-  # def total_following
-  #   Folower.where(following_id: self.id).count
-  # end
-  
   acts_as_followable
   acts_as_follower
   
