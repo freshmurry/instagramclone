@@ -26,3 +26,6 @@
 /config/application.yml
 
 .idea/*
+
+# Ignore db test files.
+db/test.*
