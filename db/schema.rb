@@ -65,10 +65,6 @@ ActiveRecord::Schema.define(version: 20200511020015) do
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
     t.index ["post_id"], name: "index_photos_on_post_id"
   end
 
