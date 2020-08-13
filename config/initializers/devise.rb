@@ -280,5 +280,4 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"]
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: 'https://instafakeapp.herokuapp.com/auth/facebook/callback'
 
-
 end
