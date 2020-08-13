@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-md-9">
             <%= link_to user_path(current_user) do %>
-              <%= image_tag current_user.avatar, class: "post-author-icon" %>
+              <%= image_tag avatar_url(current_user), class: "post-author-icon" %>
             <% end %>
           
             <strong>

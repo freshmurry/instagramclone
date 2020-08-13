@@ -1,13 +1,13 @@
 <!-- USER PROFILE PAGE -->
-
 <div class="row justify-content-md-center profile-wrapper">
   <div class="col-md-4">
-    <%= image_tag @user.avatar, width: '152', height: '152', class: "round-img" %>
+    <%= image_tag avatar_url(@user), width: '152', height: '152', class: "round-img" %>
     
   </div>
   <div class="col-md-8">
     <div class="row">
       <p class="username"><%= @user.username %></p>
+      <%= render 'follow_btn', user: @user %>
       
       <% if current_user && current_user != @user %>
         <% if current_user.following?(@user) %>
@@ -45,8 +45,8 @@
     <div class="row">
       <ul class="posts">
         <li><span><%= @posts.count %></span> Posts</li>
-        <li><span><%= @user.followers.count %></span> Followers</li>
-        <li><span><%= @user.followings.count %></span> Following</li>
+        <li><span><%= @user.followers_count %></span> Followers</li>
+        <li><span><%= @user.followings_count %></span> Following</li>
       </ul>
     </div>
     
@@ -81,5 +81,5 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </div>

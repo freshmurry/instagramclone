@@ -17,7 +17,7 @@
       <ul class="navbar-nav ml-md-auto">
         <li class="nav-item">
           <%= link_to user_path(current_user) do %>
-            <%= image_tag current_user.avatar, class: "nav-link post-author-icon hide-text" %>
+            <%= image_tag avatar_url(current_user), class: "nav-link post-author-icon hide-text" %>
           <% end %>
         </li>
       </ul>

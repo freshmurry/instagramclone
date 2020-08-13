@@ -278,5 +278,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   # config.omniauth :twitter, ENV["twitter_app_id"], ENV["twitter_app_secret"]
   config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"]
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: 'https://instafakeapp.herokuapp.com/auth/facebook/callback'
+
 
 end

@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   # post 'follow' => 'follows#create'
   # delete 'unfollow' => 'follows#destroy'
   
-  post 'follows' => 'follows#create'
-  delete 'unfollow' => 'follows#destroy'
+  post :follow, to: 'users/follows#create', as: :follow
+  delete :follow, to: 'users/follows#destroy', as: :unfollow
 
   get "about" => "pages#about" #creates about_path
   get "support" => "pages#support"
