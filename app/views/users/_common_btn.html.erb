@@ -1,4 +1,4 @@
-<div id="follow-btn">
+<div id="common-btn">
   <% if current_user.is_following?(user) %>
     <%= link_to user_unfollow_path(user.username), method: :delete,
                                                    data: {

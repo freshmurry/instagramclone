@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  # get 'search/index'
+
   root 'posts#index'
   
   get 'search' => 'search#index'
-
 
   devise_for :users,
     path: '',
@@ -17,8 +18,11 @@ Rails.application.routes.draw do
   # post 'follow' => 'follows#create'
   # delete 'unfollow' => 'follows#destroy'
   
-  post :follow, to: 'users/follows#create', as: :follow
-  delete :follow, to: 'users/follows#destroy', as: :unfollow
+  post ':user_name/follow_user', to: 'relationships#follow_user', as: :follow
+  post ':user_name/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow
+    
+  # post :follow, to: 'users/follows#create', as: :follow
+  # delete :unfollow, to: 'users/follows#destroy', as: :unfollow
 
   get "about" => "pages#about" #creates about_path
   get "support" => "pages#support"

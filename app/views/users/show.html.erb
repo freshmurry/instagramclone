@@ -7,13 +7,12 @@
   <div class="col-md-8">
     <div class="row">
       <p class="username"><%= @user.username %></p>
-      <%= render 'follow_btn', user: @user %>
-      
+
       <% if current_user && current_user != @user %>
-        <% if current_user.following?(@user) %>
+        <% if current_user.is_following?(@user) %>
           <%= link_to "Unfollow", unfollow_user_path, class: "btn btn-outline-dark common-btn edit-profile-btn", method: :delete %></p>
         <% else %>
-          <%= link_to "Follow", follows_path, class: "btn btn-outline-dark common-btn edit-profile-btn", method: :post %></p>
+          <!--<= link_to "Follow", follow_user_path, class: "btn btn-outline-dark common-btn edit-profile-btn", method: :post %></p>-->
         <% end %>
       <% end %>
       

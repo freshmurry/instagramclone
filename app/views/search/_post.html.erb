@@ -1,4 +1,4 @@
-<% posts.each do |post| %>
+<% @posts.each do |post| %>
   <div class="col-4">
     <%= link_to post_path(post) do %>
       <div class="post-stat d-flex justify-content-center align-items-center">
@@ -9,9 +9,7 @@
           <%= post.comments.size %>
         </span>
       </div>
-      <% if @post %>
-        <%= image_tag post.photos.first.image(:medium), class: "card-img-top image-preview" %>
-      <% end %>
+      <%= image_tag post.photos.first.image(:medium), class: "card-img-top image-preview" %>
     <% end %>
   </div>
 <% end %>

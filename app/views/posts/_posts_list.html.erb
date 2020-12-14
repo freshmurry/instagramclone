@@ -1,4 +1,4 @@
-<!-- HOMEPAGE LIST OF USER POSTS -->
+<!-- HOMEPAGE POSTS -->
 <% @posts.each do |post| %>
   <div class="card mt-3 post">
     <div class="card-header d-flex align-items-center">
@@ -9,10 +9,10 @@
         title: post.user.username do %>
         <strong><%= post.user.username %></strong>
       <% end %>
-     
-      <% if @post.is_belongs_to? current_user %>
-        <%= link_to post_path(@post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
-            <i class="far fa-trash-alt" aria-hidden="true"></i>
+      
+      <% if post.is_belongs_to? current_user %>
+        <%= link_to post_path(post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
+          <i class="far fa-trash-alt" aria-hidden="true"></i>
         <% end %>
       <% end %>
     </div>
@@ -34,6 +34,20 @@
         <%= render "like_text", {likes: post.likes} %>
       </div>
       
+      <div>
+        <span><strong><%= post.user.username %></strong></span>
+        <!--<span><= post.content %></span>-->
+        <span>
+          <% post.content.to_s.split(' ').each do |word| %>
+            <% if word.start_with?('#') %>
+              <%= link_to word, search_path(query: word) %>
+            <% else %>
+              <%= word %>
+            <% end %>
+          <% end %>
+        </span>
+      </div>
+      
       <!-- load comments -->
       <div id="comment-post-<%= post.id.to_s %>">
         <%= render 'comment_list', {post: post} %>
@@ -41,7 +55,7 @@
       
       <%= link_to time_ago_in_words(post.created_at).upcase + " AGO", post_path(post),
         class: "light-color post-time no-text-decoration" %>
-      <hr>
+
       <div class="row actions" id="comment-form-post-<%= post.id.to_s %>">
         <%= render 'comment_form', {post: post} %>
       </div>

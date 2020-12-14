@@ -51,6 +51,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.row {
+  margin-right: -25px;
+  margin-left: -25px;
+}
+
 // BILLABONG FREE DOWNLOAN FROM allbestfonts.com
 
 .navbar-brand {
@@ -58,15 +63,12 @@ body {
   max-height: 100%;
   max-width: 100%;
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: 600;
   // padding: auto;
 }
 
 .follower-suggestions {
-  background: #FFF;
   padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
 }
 
 .hide-text {
@@ -331,11 +333,29 @@ ul.posts{
   }
 }
 
-.post-author-icon {
+.navbar .post-author-icon {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 5px;
+}
+
+.post-author-icon {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+span .post-author-icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.pl-3, .px-3 {
+  padding-top: 15px;
 }
 
 // Customize upload photos form
