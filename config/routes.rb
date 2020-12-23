@@ -14,15 +14,19 @@ Rails.application.routes.draw do
   # /users/3 -> Users controller, show action, params {id: '3'}
 
   resources :users, only: [:index, :show]
+  resources :users, only: :show, param: :username do
+    member do
+      post 'follow', to: 'follows#create'
+      delete 'unfollow', to: 'follows#destroy'
+    end
+  end
 
-  # post 'follow' => 'follows#create'
-  # delete 'unfollow' => 'follows#destroy'
-  
-  post ':user_name/follow_user', to: 'relationships#follow_user', as: :follow
-  post ':user_name/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow
-    
-  # post :follow, to: 'users/follows#create', as: :follow
-  # delete :unfollow, to: 'users/follows#destroy', as: :unfollow
+  resources :items do
+    member do
+      post 'vote', to: 'votes#create'
+      delete 'unvote', to: 'votes#destroy'
+    end
+  end
 
   get "about" => "pages#about" #creates about_path
   get "support" => "pages#support"

@@ -12,7 +12,7 @@
           <% end %>
           <strong>
             <%= link_to comment.user.username, user_path(comment.user), class: "no-text-decoration normal-color" %>
-          </strong>
+          </strong> 
           <!--<span><= comment.content %></span>-->
           <span>
             <% comment.content.to_s.split(' ').each do |word| %>

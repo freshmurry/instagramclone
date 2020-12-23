@@ -1,6 +1,6 @@
 <%= link_to post_path(post) do %>
   <% if post.photos.size == 1 %>
-    <%= image_tag post.photos.first.image.url(:standard), class: "card-img-top" %>
+    <%= image_tag post.photos.first.image.url(), class: "card-img-top" %>
   <% else %>
     <div class="carousel slide" data-ride="carousel" id="carousel-post-<%= @post.id %>">
       <div class="carousel-inner">
@@ -10,7 +10,7 @@
           <% else %>
             <div class="carousel-item">
           <% end %>
-              <%= image_tag photo.image.url(:standard), class: "card-img-top" %>
+              <%= image_tag photo.image.url(), class: "card-img-top" %>
             </div>
         <% end %>
       </div>

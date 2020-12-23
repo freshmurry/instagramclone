@@ -30,7 +30,9 @@ gem 'toastr-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate-bootstrap4'
+gem 'mini_racer'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
