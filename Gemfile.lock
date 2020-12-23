@@ -281,7 +281,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_follower!
   acts_as_votable (~> 0.10.0)
-  aws-sdk-s3
+  aws-sdk-s3 (~> 1)
   bootstrap (~> 4.0.0)
   byebug
   capybara (~> 2.13)

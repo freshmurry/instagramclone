@@ -14,7 +14,7 @@ gem 'mini_magick'
 # gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'paperclip', '~> 5.1.0'
 # gem 'aws-sdk', '~> 3'
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', '~> 1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'dropzonejs-rails'

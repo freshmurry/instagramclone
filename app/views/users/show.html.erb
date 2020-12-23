@@ -12,7 +12,7 @@
         <% if current_user.is_following?(@username) %>
           <%= link_to "Unfollow", unfollow_user_path(@user.username), class: "btn btn-outline-dark common-btn edit-profile-btn", method: :delete %></p>
         <% else %>
-          <%= link_to "Follow", follow_user_path(@user.username), class: "btn btn-outline-dark common-btn edit-profile-btn", method: :post %></p>
+          <!--<= link_to "Follow", follow_user_path(@user.username), class: "btn btn-outline-dark common-btn edit-profile-btn", method: :post %></p>-->
         <% end %>
       <% end %>
       
