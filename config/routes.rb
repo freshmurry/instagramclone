@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   # get '/users/:id', to: 'users#show'
   # /users/3 -> Users controller, show action, params {id: '3'}
 
-  resources :users, only: [:index, :show]
-  resources :users, only: :show, param: :username do
+  resources :users, only: [:index, :show] do
+  # resources :users, only: :show, param: :username do
     member do
       post 'follow', to: 'follows#create'
       delete 'unfollow', to: 'follows#destroy'

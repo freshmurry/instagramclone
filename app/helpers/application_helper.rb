@@ -25,4 +25,12 @@ module ApplicationHelper
     response = http.request(request)
     response.code.to_i != 404
   end
+  
+  def website(user)
+    link_to @user.website, "#{url_with_protocol(website)}", class: "website", target: :_blank
+  end
+  #=> url helper
+  def url_with_protocol(url)
+      /^http/.match(url) ? url : "http://#{url}"
+  end
 end

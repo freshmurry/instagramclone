@@ -43,6 +43,10 @@ body {
 .navbar-toggler {
   color: #FFFFFF;
   border-color: #FFFFFF;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-top: 5px;
 }
 
 .core-sprite {

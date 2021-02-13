@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  include Followable
-  
+
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :comments
@@ -38,4 +37,8 @@ class User < ApplicationRecord
       nil
     end
   end
+  
+  acts_as_followable
+  acts_as_follower
+  acts_as_voter
 end
