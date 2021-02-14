@@ -28,9 +28,17 @@ body {
   display: flex;
   min-height: 100vh;
 	flex-direction: column;
-  -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+  -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+:root {
+  box-sizing: content-box;
+}
+
+div .container {
+  padding: -25;
 }
 
 .navbar {
@@ -56,8 +64,8 @@ body {
 }
 
 .row {
-  margin-right: -25px;
-  margin-left: -25px;
+  // margin-right: -25px;
+  // margin-left: -25px;
 }
 
 // BILLABONG FREE DOWNLOAN FROM allbestfonts.com
@@ -213,7 +221,7 @@ a:hover {
 }
 
 .profile-wrapper {
-  padding: 60px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #efefef;
   -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -224,9 +232,15 @@ a:hover {
     width: 100%;
 
   .username {
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 200;
+    font-size: 28px;
+    font-size: 28px;
+    line-height: 32px;
+    margin: -5px 0 -6px;
+    font-weight: 300;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .email {
@@ -263,6 +277,15 @@ ul.posts{
 
 .round-img {
   border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.0975);
+  border: 1px solid rgba(var(--jb7,0,0,0),.0975);
+  bottom: 0;
+  content: '';
+  left: 0;
+  // pointer-events: none;
+  // position: absolute;
+  // right: 0;
+  // top: 0;
 }
 
 .common-btn {
@@ -274,7 +297,7 @@ ul.posts{
 }
 
 .edit-profile-btn {
-  margin: 5px 0 0 15px;
+  margin: 5px 0 0 5px;
   font-weight: bold;
 }
 
@@ -506,8 +529,26 @@ span .post-author-icon {
   margin: 5px 0 0 10px;
 }
 
+header {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  // margin-left: 16px;
+  // margin-right: 16px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 735px),
+header {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    // margin-right: 28px;
+}
+
 .profile-tab {
-  margin-top: 60px;
+  margin-top: 40px;
+  padding-left: 0;
 
   .nav-tabs {
     border: 0;
