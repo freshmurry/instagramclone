@@ -37,8 +37,9 @@ body {
   box-sizing: content-box;
 }
 
-div .container {
-  padding: -25;
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .navbar {
@@ -441,7 +442,7 @@ span .post-author-icon {
   }
 
   .card-body {
-    padding: 5px 16px 5px;
+    padding: 5px;
   }
 
   .actions {
