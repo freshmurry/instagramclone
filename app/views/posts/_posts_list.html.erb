@@ -5,16 +5,31 @@
       <%= link_to user_path(post.user), class: "no-text-decoration" do %>
         <%= image_tag avatar_url(post.user), class: "post-author-icon" %>
       <% end %>
+      
       <%= link_to user_path(post.user), class: "normal-color no-text-decoration",
         title: post.user.username do %>
         <strong><%= post.user.username %></strong>
       <% end %>
       
       <% if post.is_belongs_to? current_user %>
-        <%= link_to post_path(post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
-          <i class="far fa-trash-alt" aria-hidden="true"></i>
-        <% end %>
-      <% end %>
+        <a class="ml-auto delete-post-icon mx-0 my-auto" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+
+        <div class="modal fade" id="exampleModal" tabindhex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="list-group text-center">
+                <%= link_to post_path(post), method: :delete, class: "list-group-item list-group-item-action", data: { confirm: 'Are you sure?' } do %> 
+                  Delete
+                <% end %>
+                <%= link_to post_path(post), class: "list-group-item list-group-item-action" do %> 
+                  Edit
+                <% end %>
+                <a href="#" class="list-group-item list-group-item-action" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>  
     </div>
   
     <%= render "photos", {post: post} %>

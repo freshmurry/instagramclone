@@ -18,7 +18,8 @@ h1.billabong {
 }
 
 body {
-  background-color: #fafafa;
+  // background-color: #fafafa;
+  background-color: #FFF;
   font-size: 14px;
   color: #262626;
   padding-bottom: 200px;
@@ -42,6 +43,7 @@ body {
   padding-right: 0px;
 }
 
+//NAVBARS
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
@@ -55,7 +57,7 @@ body {
   -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    margin-top: 5px;
+    // margin-top: 5px;
 }
 
 .core-sprite {
@@ -76,7 +78,7 @@ body {
   max-height: 100%;
   max-width: 100%;
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: normal;
   // padding: auto;
 }
 
@@ -507,7 +509,8 @@ span .post-author-icon {
 }
 
 .post-show-img {
-  background-color: #fafafa;
+  // background-color: #fafafa;
+  background-color: #FFF;
   margin: -10px 0;
 }
 
