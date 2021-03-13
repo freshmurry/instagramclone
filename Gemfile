@@ -21,7 +21,6 @@ gem 'devise'
 gem 'dropzonejs-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
-gem "bootstrap-sass", ">= 3.4.1"
 gem 'meta-tags'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook'
