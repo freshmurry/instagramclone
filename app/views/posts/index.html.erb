@@ -1,38 +1,41 @@
 <!-- HOMEPAGE POST AND IMAGE UPLOADING FUNCTION -->
-
-<div class="d-flex flex-column align-items-center mt-3">
-  <div class="col-xl-3 col-lg-8 col-md-10 col-sm-11 post-card">
-  <!--<div class="col-md-6">-->
-    <div class="">
-      <div class="">Create Post</div>
-      <div class="">
-        <%= form_for @post, :html => {:multipart => true, :class => "dropzone upload-images p-0 border-0"} do |f| %>
-          <div class="form-group row mt-2">
-            <div class="col-auto pr-0">
-              <%= image_tag avatar_url(current_user), class: "post-author-icon" %>
-            </div>
-            <div class="col pl-0">
-              <%= f.text_field :content, class: "form-control border-0", placeholder: "Say something about this ..." %>
-            </div>
-          </div>
-          <div class="fallback">
-            <%= file_field_tag "images[]", type: :file, multiple: true %>
-          </div>
-          <div class="dz-message m-0"></div>
-          <div class="dropzone-previews mb-3">
-            <div class="upload-photos-icon">
-              <i class="fa fa-plus fa-2x" aria-hidden="true" style="color:#dddfe2"></i>
-            </div>
-          </div>
-          <%= f.submit "Post", class: "btn btn-primary" %>
-        <% end %>
+<div class="col-6">
+  <div class="">Create Post</div>
+  <div class="">
+    <%= form_for @post, :html => {:multipart => true, :class => "dropzone upload-images p-0 border-0"} do |f| %>
+      <div class="form-group row mt-2">
+        <div class="col-auto pr-0">
+          <%= image_tag avatar_url(current_user), class: "post-author-icon" %>
+        </div>
+        <div class="col pl-0">
+          <%= f.text_field :content, class: "form-control border-0", placeholder: "Say something about this ..." %>
+        </div>
       </div>
-    </div>
+          
+      <div class="fallback">
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </div>
+      
+      <div class="dz-message m-0"></div>
+      
+      <div class="dropzone-previews mb-3">
+        <div class="upload-photos-icon">
+          <i class="fa fa-plus fa-2x" aria-hidden="true" style="color:#dddfe2"></i>
+        </div>
+      </div>
+      <%= f.submit "Post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+    
+<div class="d-flex flex-column align-items-center mt-3">
+  <!--<div class="col-xl-3 col-lg-8 col-md-10 col-sm-11">-->
+  <!--<div class="col-md-6">-->
 
     <div id="posts">
       <%= render 'posts_list' %>
     </div>
-  </div>
+  <!--</div>-->
 </div>
 <br>
 <%= will_paginate @posts %>

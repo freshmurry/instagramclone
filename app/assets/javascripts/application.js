@@ -12,6 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery3
+//= require bootstrap-sprockets
+//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
 //= require dropzone

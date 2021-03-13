@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />  
+    
     <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    
     <%= display_meta_tags site: 'Instafake • Capture, edit & share photos, videos & messages with friends & family.',
                           keywords: %w[Fake Instgram, Instafake],
                           description: "Create an account or log in to Instafake - A simple, fun & creative way to capture, edit & share photos, videos & messages with friends & family."%>
@@ -15,7 +20,7 @@
     })(window,document,'script','dataLayer','GTM-MVXD7NQ');</script>
     <!-- End Google Tag Manager -->
     
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -33,7 +38,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <%= render 'shared/navbar' if current_user %>
-    <div class="container-fluid">
+    <div class="container">
       <%= yield %>
     </div>
 

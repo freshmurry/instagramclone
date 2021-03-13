@@ -43,21 +43,26 @@ body {
   padding-right: 0px;
 }
 
-//NAVBARS
+// NAVBARS
 .navbar {
   background-color: #fff;
-  border-bottom: 1px solid rgba(0,0,0,.0975);
-  height: 54px;
-  flex-wrap: nowrap;
+  border-bottom: .5px solid rgba(0,0,0,.0975);
+  // height: 54px;
+  // flex-wrap: nowrap;
 }
 
-.navbar-toggler {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
-  -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    // margin-top: 5px;
+.navbar-light .navbar-toggler-icon {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
 }
 
 .core-sprite {
