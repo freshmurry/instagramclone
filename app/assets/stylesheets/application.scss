@@ -51,6 +51,26 @@ body {
   // flex-wrap: nowrap;
 }
 
+.navbar-default.static-top {
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-color: #262626;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+    height: 54px;
+    flex-wrap: nowrap;
+}
+
+.navbar-toggler {
+  // color: #333;
+  // border-color: #333;
+  // -webkit-border-radius: 0;
+  //   -moz-border-radius: 0;
+  //   border-radius: 0;
+  //   // margin-top: 5px;
+  //   color: rgba(0, 0, 0, 0.5);
+}
+
 .navbar-light .navbar-toggler-icon {
   color: rgba(0, 0, 0, 0.5);
 }
