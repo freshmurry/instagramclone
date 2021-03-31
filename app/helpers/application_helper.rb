@@ -7,10 +7,11 @@
 # end
 
 module ApplicationHelper
-  def avatar_url user
+  def avatar_url(user)
     if gravatar?(user)
       gravatar = Digest::MD5::hexdigest(user.email).downcase
-      "http://gravatar.com/avatar/#{gravatar}.png?s=200"
+      # "http://gravatar.com/avatar/#{gravatar}.png?s=200"
+      "https://www.gravatar.com/avatar/#{gravatar}.jpg?d=identical&s=150"
     else
       'default_avatar.png'
     end
@@ -26,7 +27,7 @@ module ApplicationHelper
     response.code.to_i != 404
   end
   
-  def website(user)
+  def @user.website
     link_to @user.website, "#{url_with_protocol(website)}", class: "website", target: :_blank
   end
   #=> url helper
