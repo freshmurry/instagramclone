@@ -53,10 +53,13 @@
       <div class="row">
         <%= @user.bio %>
       </div>
-      <div class="row">
-        <b><%= link_to @user.website, class: 'website', target: :_blank %></b>
-      </div>
-  
+      <% if @user.website %>
+        <div class="row">
+          <b><%= link_to @user.website, class: 'website', target: '_blank' %></b>
+        </div>
+      <% else%>
+      <% end %>
+      
       <div class="profile-tab">
         <% if @user == current_user %>
         <nav>

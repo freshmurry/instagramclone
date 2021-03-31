@@ -104,16 +104,16 @@ ActiveRecord::Schema.define(version: 20210213075240) do
     t.string "provider"
     t.string "uid"
     t.string "image"
-    t.string "website"
-    t.text "bio"
-    t.string "name"
-    t.string "username"
-    t.string "avatar_file_name"
-    t.string "avatar_content_type"
-    t.integer "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.integer "followers_count", default: 0, null: false
     t.integer "followings_count", default: 0, null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "name"
+    t.string "username"
+    t.string "website"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
