@@ -459,10 +459,15 @@ span .post-author-icon {
 .post {
   .card-header {
     background-color: white;
+    border: 1px solid #f2f2f2;
+    position: relative;
+        -webkit-flex-direction: column;
+        
   }
 
   .card-body {
     padding: 5px;
+    border: 1px solid #f2f2f2;
   }
 
   .actions {

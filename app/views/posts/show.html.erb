@@ -1,14 +1,5 @@
 <!-- SINGLE PAGE POST -->
 <div class="px-3 d-flex align-items-center">
-  <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
-    <%= image_tag avatar_url(@post.user), class: "post-author-icon" %>
-  <% end %>
-        
-  <%= link_to user_path(@post.user), class: "normal-color no-text-decoration d-flex align-self-center",
-    title: @post.user.name do %>
-    <strong><%= @post.user.name %></strong>
-  <% end %>
-        
   <% if @post.is_belongs_to? current_user %>
   <a class="ml-auto delete-post-icon mx-0 my-auto" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
     <div class="modal fade" id="exampleModal" tabindhex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -55,7 +46,7 @@
       <div class="comment-list py-2">
         <% if @post.content.present? %>
           <div>
-            <%= link_to user_path(current_user) do %>
+            <%= link_to user_path(@post.user) do %>
               <%= image_tag avatar_url(@post.user), class: "post-author-icon" %>
             <% end %>
             <span><strong><%= @post.user.username %></strong></span>
