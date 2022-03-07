@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :follows
 
-  
   # has_one_attached :avatar
 
   # Include default devise modules. Others available are:
@@ -42,5 +41,4 @@ class User < ApplicationRecord
   
   acts_as_followable
   acts_as_follower
-  acts_as_voter
 end
