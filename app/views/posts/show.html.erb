@@ -12,8 +12,8 @@
         <% end %>
         
         <%= link_to user_path(@post.user), class: "normal-color no-text-decoration d-flex align-self-center",
-          title: @post.user.name do %>
-          <strong><%= @post.user.name %></strong>
+          title: @post.user.username do %>
+          <strong><%= @post.user.username %></strong>
         <% end %>
         
         <% if @post.is_belongs_to? current_user %>
@@ -36,11 +36,11 @@
         <% end %>
       </div>
       
-      <hr class="mb-0">
+      <!--<hr class="mb-0">-->
       <div class="comment-list py-2">
       <% if @post.content.present? %>
         <div>
-          <span><strong><%= @post.user.name %></strong></span>
+          <span><strong><%= @post.user.username %></strong></span>
           <span><%= @post.content %></span>
         </div>
       <% end %>
